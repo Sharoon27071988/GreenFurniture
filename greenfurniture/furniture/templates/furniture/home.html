@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load navbar_catalog %}
+
+{% block title %}Домашняя страница{% endblock %}
+
+{% block content %}
+<div class="container" style="max-width: 770px; margin: 800 auto;">
+    {% navbar_catalog %}
+    <h1 style="text-align: center;">Реализованные проекты Компании:</h1>
+
+    {% furniture_list furniture page_obj %}
+</div>
+{% endblock %}

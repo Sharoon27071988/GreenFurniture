@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load navbar_catalog %}
+
+{% block title %}Товар {{ furniture.name }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% navbar_catalog %}
+    <h1>Товар {{ furniture.name }}</h1>
+
+    <div class="card">
+        <div class="row">
+            <div class="col-4">
+                <img src="{{ furniture.image.url }}" class="card-img-top" alt="...">
+            </div>
+            <div class="col-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ furniture.name }}</h5>
+                    <p class="card-text">Категория: {{ furniture.type.category.name }}</p>
+                    <p class="card-text">Вид: {{ furniture.type.name }}</p>
+                    <p class="card-text">Описание: {{ furniture.description }}</p>
+                    <p class="card-text">Производитель ООО: {{ furniture.manufacturer.name }} </p>
+                    <p class="card-text">Информация о Производителе: {{ furniture.manufacturer.description  }} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

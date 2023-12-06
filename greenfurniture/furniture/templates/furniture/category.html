@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load navbar_catalog %}
+
+{% block title %}Категория {{ category.name }}{% endblock %}
+
+{% block content %}
+<div class="container" style="max-width: 770px; margin: 0 auto;">
+    {% navbar_catalog %}
+    <h1>Последнии заказы {{ category.name }}</h1>
+
+    {% furniture_list furniture page_obj %}
+</div>
+{% endblock %}
